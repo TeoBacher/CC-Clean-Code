@@ -1,11 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { highCard, card, isBrelan, isSuite, isColor, isPair} from ".";
+import { highCard, card, isBrelan, isSuite, isColor, isPair, isFull} from ".";
 
 let cards =[card("2", 2),card("3", 3),card("4", 4),card("5", 5),card("6", 6)];
 let cardsBrelan =[card("2", 2),card("2", 2),card("2", 2),card("5", 5),card("6", 6)];
 let cardsSuite =[card("2", 2),card("3", 3),card("4", 4),card("5", 5),card("6", 6)];
 let cardsColor =[card("2", 2),card("3", 3),card("4", 4),card("5", 5),card("6", 6)];
 let cardsPair =[card("2", 2),card("2", 2),card("4", 4),card("5", 5),card("6", 6)];
+let cardsFull =[card("2", 2),card("2", 2),card("2", 2),card("5", 5),card("5", 5)];
+
 describe("highCard", () => {
     it("should return the sum of the values of the cards", () => {
         const result = highCard(cards);
@@ -29,6 +31,11 @@ describe("highCard", () => {
 
     it("should return true if the set of cards is a Pair", () => {
         const result = isPair(cardsPair);
+        expect(result).toBe(true);
+    });
+
+    it("should return true if the set of cards is a Full", () => {
+        const result = isFull(cardsFull);
         expect(result).toBe(true);
     });
 

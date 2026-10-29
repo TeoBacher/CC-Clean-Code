@@ -48,13 +48,21 @@ export function isColor(cards){
   return colors.every(color => color === colors[0]);
 }
 
-//chech if the set of cars is a  pair
+//check if the set of cars is a  pair
 export function isPair(cards){
   for(let card of cards){
     let count = cards.filter(c => c.title === card.title).length;
     if(count === 2){
       return true;
     }
+  }
+  return false;
+}
+
+//chack if the set of cars is a full
+export function isFull(cards){
+  if(isBrelan(cards) && isPair(cards)){
+    return true;
   }
   return false;
 }
