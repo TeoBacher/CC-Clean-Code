@@ -42,3 +42,9 @@ export function isSuite(cards){
   return true;
 }
 
+//Check if the set of cards is a Color
+export function isColor(cards){
+  let colors = cards.map(card => card.color);
+  return colors.every(color => color === colors[0]);
+}
+
