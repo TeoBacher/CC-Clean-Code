@@ -6,17 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TeoBacher/CC-Clean-Code.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TeoBacher/CC-Clean-Code/issues"
-  },
-  "homepage": "https://github.com/TeoBacher/CC-Clean-Code#readme",
   "devDependencies": {
     "vitest": "^5.0.5"
   }
