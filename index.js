@@ -20,3 +20,14 @@ export function highCard(cards){
   return sum;
 }
 
+// Check if the set of cards is a Brelan 
+export function isBrelan(cards){
+  for(let card of cards){
+    let count = cards.filter(c => c.title === card.title).length;
+    if(count === 3){
+      return true;
+    }
+  }
+  return false;
+}
+
