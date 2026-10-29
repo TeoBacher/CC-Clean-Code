@@ -1,4 +1,4 @@
-const SCORE_CATEGORY = {
+export const SCORE_CATEGORY = {
   BRELAN: 30,
   SUITE: 40,
   COLOR: 45,
@@ -10,7 +10,23 @@ export const card = (title = "", value = 0) => ({ title, value });
 
 let setOfcards = [[card("2", 2), card("3", 3), card("4", 4), card("5", 5), card("6", 6)]];
 
-
+export function pokerCard(setOfcards) {
+  const result = [];
+  for (const set of setOfcards) {
+    if (isFull(set)) {
+      result.push(SCORE_CATEGORY.FULL);
+    } else if (isColor(set)) {
+      result.push(SCORE_CATEGORY.COLOR);
+    } else if (isSuite(set)) {
+      result.push(SCORE_CATEGORY.SUITE);
+    } else if (isBrelan(set)) {
+      result.push(SCORE_CATEGORY.BRELAN);
+    } else if (isPair(set)) {
+      result.push(SCORE_CATEGORY.PAIR);
+    }
+  }
+  return result;
+}
 
 export function highCard(cards){
   let sum = 0;
