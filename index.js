@@ -31,3 +31,14 @@ export function isBrelan(cards){
   return false;
 }
 
+//Check if the set of cards is a Suite
+export function isSuite(cards){
+  let values = cards.map(card => card.value).sort((a, b) => a - b);
+  for(let i = 1; i < values.length; i++){
+    if(values[i] !== values[i - 1] + 1){
+      return false;
+    }
+  }
+  return true;
+}
+
